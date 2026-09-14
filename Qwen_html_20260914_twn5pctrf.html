@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SynergyO2 Colombia - Complemento alimenticio de oxígeno líquido y sílica vegetal. Oxigena, desintoxica y regenera tus células.">
+    <title>SynergyO2 Colombia | Oxígeno Líquido para tus Células</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+        
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #667eea;
+        }
+        
+        /* Benefits */
+        .benefits {
+            background: #f8f9fa;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        /* How to Use */
+        .usage-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .step {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        /* Conditions */
+        .conditions {
+            background: #f8f9fa;
+        }
+        
+        .conditions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .condition-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .condition-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .condition-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .condition-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .condition-card li:before {
+            content: "✓";
+            color: #28a745;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Disclaimer */
+        .disclaimer {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 3rem 0;
+        }
+        
+        .disclaimer h3 {
+            color: #856404;
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2rem;
+            line-height: 60px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            text-decoration: none;
+            z-index: 1000;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">SynergyO₂ Colombia</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#beneficios">Beneficios</a></li>
+                <li><a href="#como-tomar">Cómo Tomarlo</a></li>
+                <li><a href="#condiciones">Condiciones</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>Oxígeno Líquido para tus Células</h1>
+            <p>Descubre el poder del oxígeno naciente y la sílica vegetal para transformar tu salud</p>
+            <a href="https://wa.me/57XXXXXXXXX" class="cta-button">¡Solicita Información Ahora!</a>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="beneficios">
+        <div class="container">
+            <h2 class="section-title">Beneficios Principales</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💨</div>
+                    <h3>Oxigenación Celular</h3>
+                    <p>Incrementa la respiración celular, oxigena el cerebro para mejor memoria y elimina radicales libres. Aumenta tus niveles de energía naturalmente.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🧹</div>
+                    <h3>Desintoxicación Profunda</h3>
+                    <p>Elimina toxinas del cuerpo, purifica la sangre, limpia intestinos y restaura funciones digestivas. Proceso natural de limpieza celular.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon"></div>
+                    <h3>Regeneración Celular</h3>
+                    <p>Reconstrucción celular, regeneración de tejidos, huesos, tejidos conectivos y articulaciones. Regenerador de membrana pulmonar.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌿</div>
+                    <h3>Sílica Vegetal</h3>
+                    <p>Fortalece cabello, uñas y piel. Previene osteoporosis, ayuda en artritis, mejora circulación y regula presión arterial. Poderoso antiinflamatorio.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Equilibrio Total</h3>
+                    <p>Equilibrio químico (normaliza pH), biológico (mejora digestión), eléctrico (aumenta frecuencias vibratorias) y normalizador sistémico.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3>Sistema Inmune</h3>
+                    <p>Fortalece las defensas naturales, incrementa células T, eleva frecuencias vibratorias de órganos y ayuda a combatir patógenos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Use Section -->
+    <section class="how-to-use" id="como-tomar">
+        <div class="container">
+            <h2 class="section-title">¿Cómo Tomar SynergyO₂?</h2>
+            
+            <div class="usage-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Preparación</h3>
+                    <p>Mezcla las gotas con agua potable (preferiblemente destilada). <strong>NO</strong> uses agua hervida. <strong>NO</strong> tomes con café.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Cuándo Tomarlo</h3>
+                    <p>30 minutos antes de comer o en ayunas. También puedes tomarlo antes de dormir para un sueño reparador.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Dosis Inicial</h3>
+                    <p><strong>Primera semana:</strong> 3-7 gotas, 3 veces al día (aumentando gradualmente)<br>
+                    <strong>Mantenimiento:</strong> 8-10 gotas, 3 veces al día</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Recomendaciones</h3>
+                    <p>✓ Escucha tu cuerpo y ajusta la dosis<br>
+                    ✓ Consume abundante agua (más de 8 vasos/día)<br>
+                    ✓ Puede haber proceso de desintoxicación los primeros días (es normal)</p>
+                </div>
+            </div>
+            
+            <div class="disclaimer">
+                <h3>⚠️ Proceso de Desintoxicación (Crisis Curativa)</h3>
+                <p>Al iniciar SynergyO₂, algunas personas experimentan: náuseas leves, dolores de cabeza, ir al baño más frecuente o cansancio temporal. Esto dura 1-7 días y significa que el producto está funcionando, eliminando toxinas acumuladas.</p>
+                <p><strong>¿Qué hacer?</strong> NO suspender el producto, bajar la dosis si es muy fuerte y consumir abundante agua.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conditions Section -->
+    <section class="conditions" id="condiciones">
+        <div class="container">
+            <h2 class="section-title">Condiciones que Pueden Beneficiarse</h2>
+            
+            <div class="conditions-grid">
+                <div class="condition-card">
+                    <h3> Hipertensión y Riesgo Cardiovascular</h3>
+                    <p><strong>Cómo ayuda:</strong> Normaliza la circulación, regula la presión arterial, fortalece vasos sanguíneos, evita estrechez y endurecimiento de arterias.</p>
+                    <p><strong>Dosis:</strong> 8-10 gotas, 3-5 veces al día</p>
+                </div>
+                
+                <div class="condition-card">
+                    <h3>🦴 Artritis, Artrosis y Dolores Articulares</h3>
+                    <p><strong>Cómo ayuda:</strong> Reduce dolor e inflamación articular, mejora elasticidad, regenera tejidos conectivos, fija calcio en huesos.</p>
+                    <p><strong>Dosis:</strong> 8-10 gotas, 3-5 veces al día (aumentando semanalmente)</p>
+                </div>
+                
+                <div class="condition-card">
+                    <h3>🍃 Diabetes</h3>
+                    <p><strong>Cómo ayuda:</strong> Promueve síntesis de inhibidor de elastasa por páncreas, normaliza glucosa en sangre, mejora metabolismo.</p>
+                    <p><strong>Dosis:</strong> 6-8 gotas, 5 veces al día</p>
+                </div>
+                
+                <div class="condition-card">
+                    <h3> Asma, EPOC y Problemas Respiratorios</h3>
+                    <p><strong>Cómo ayuda:</strong> Regenera membrana pulmonar, descongestiona bronquios, mejora intercambio de oxígeno, reduce inflamación.</p>
+                    <p><strong>Dosis:</strong> 6-8 gotas, 3-5 veces al día</p>
+                </div>
+                
+                <div class="condition-card">
+                    <h3>🧠 Estrés, Ansiedad e Insomnio</h3>
+                    <p><strong>Cómo ayuda:</strong> Proporciona nutrientes perdidos por estrés, mejora relajación, activa hemisferios cerebrales, da paz mental.</p>
+                    <p><strong>Dosis:</strong> 8-10 gotas, 3 veces al día + dosis antes de dormir</p>
+                </div>
+                
+                <div class="condition-card">
+                    <h3>💪 Obesidad y Sobrepeso</h3>
+                    <p><strong>Cómo ayuda:</strong> Elimina toxinas, usa energía de grasa corporal, mejora metabolismo, reduce colesterol y triglicéridos.</p>
+                    <p><strong>Dosis:</strong> 10-24 gotas, 3 veces al día (aumento gradual)</p>
+                </div>
+                
+                <div class="condition-card">
+                    <h3> Sistema Inmune Débil</h3>
+                    <p><strong>Cómo ayuda:</strong> Fortalece sistema inmune, incrementa células T, eleva frecuencias vibratorias, ayuda a combatir infecciones.</p>
+                    <p><strong>Dosis:</strong> 8-10 gotas por hora (en crisis) luego 5 veces al día</p>
+                </div>
+                
+                <div class="condition-card">
+                    <h3> Osteoporosis y Desgaste Óseo</h3>
+                    <p><strong>Cómo ayuda:</strong> Fija calcio en huesos, la sílica transmuta en calcio, regenera huesos, acelera sanación de fracturas.</p>
+                    <p><strong>Dosis:</strong> 4-8 veces la dosis recomendada (bajo supervisión)</p>
+                </div>
+                
+                <div class="condition-card">
+                    <h3>💇 Cabello, Piel y Uñas</h3>
+                    <p><strong>Cómo ayuda:</strong> Estimula colágeno, da brillo y fuerza al cabello, fortalece uñas, reduce arrugas, embellece piel.</p>
+                    <p><strong>Dosis:</strong> Oral: 8-10 gotas 3 veces/día<br><strong>Tópico:</strong> 3 gotas en 10ml agua</p>
+                </div>
+                
+                <div class="condition-card">
+                    <h3> Problemas Digestivos</h3>
+                    <p><strong>Cómo ayuda:</strong> Limpia intestinos, restaura funciones digestivas, reduce inflamación, normaliza pH, elimina toxinas.</p>
+                    <p><strong>Dosis:</strong> 6-8 gotas, 3-5 veces al día</p>
+                </div>
+                
+                <div class="condition-card">
+                    <h3> Rinitis y Sinusitis</h3>
+                    <p><strong>Cómo ayuda:</strong> Fortalece tracto respiratorio superior, reduce inflamación, acción positiva en sistema linfático.</p>
+                    <p><strong>Dosis:</strong> 5-8 gotas, 3-5 veces al día<br><strong>Tópico:</strong> 10 gotas diluidas en 30ml agua de rosas</p>
+                </div>
+                
+                <div class="condition-card">
+                    <h3>⚡ Deportistas</h3>
+                    <p><strong>Cómo ayuda:</strong> Elimina ácido láctico, incrementa resistencia, rápida reposición de líquidos, aporta electrolitos.</p>
+                    <p><strong>Dosis:</strong> 20 gotas, 3 veces al día (antes, durante y después del ejercicio)</p>
+                </div>
+            </div>
+            
+            <div class="disclaimer">
+                <h3>⚠️ Importante</h3>
+                <p><strong>SynergyO₂ NO es un medicamento.</strong> Es un complemento alimenticio natural. Los resultados varían según cada persona. No suspenda sus medicamentos sin consultar a su médico. Consulte con su médico si está embarazada, lactando o tiene una condición grave.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">¿Listo para Transformar tu Salud?</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem;">Escríbenos por WhatsApp y recibe asesoría personalizada</p>
+            <a href="https://wa.me/57XXXXXXXXX" class="cta-button" style="font-size: 1.5rem; padding: 1.5rem 3rem;">
+                💬 Contactar por WhatsApp
+            </a>
+            
+            <div style="margin-top: 3rem; background: #f8f9fa; padding: 2rem; border-radius: 10px;">
+                <h3 style="color: #667eea; margin-bottom: 1rem;">Precios Especiales</h3>
+                <p><strong>1 Frasco:</strong> $180.000 COP</p>
+                <p><strong>2 Frascos:</strong> $342.000 COP (5% descuento)</p>
+                <p><strong>4 Frascos (Tratamiento Completo):</strong> $648.000 COP (10% descuento + Envío GRATIS)</p>
+                <p style="margin-top: 1rem; color: #28a745; font-weight: bold;">✓ Pago contra entrega disponible</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SynergyO₂ Colombia. Todos los derechos reservados.</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">
+                SynergyO₂ es un complemento alimenticio, no un medicamento.<br>
+                Los resultados pueden variar de persona a persona.
+            </p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/57XXXXXXXXX" class="whatsapp-float" target="_blank">
+        💬
+    </a>
+</body>
+</html>
